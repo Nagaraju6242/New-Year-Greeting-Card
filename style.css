@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Sacramento&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(250, 176, 160, 0.5);
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(220, 60, 77);
+}
+
+.card-holder{
+    transition: transform 1.5s;
+    width: 250px;max-width: 50vw;
+    aspect-ratio: 1/2;
+    position: relative;
+}
+
+.details{
+    width: 250px;
+    max-width: 50vw;
+    aspect-ratio: 1/2;
+    background-color: #fff;
+    padding: 75px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("images/inner.png");
+    background-size: cover;
+    font-family: 'Sacramento', cursive;
+    text-align: center;
+}
+
+.details h4{
+    font-size: 25px;
+    transition: all .25s ease;
+}
+
+.details h4:hover {
+    text-shadow: 0 0 10px #dc3c4d;
+}
+
+.card{
+    position: absolute;
+    width: 250px;max-width: 50vw;
+    aspect-ratio: 1/2;
+    perspective: 150rem;
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1.5s;
+}
+
+.card-holder:hover{
+    transform: translateX(50%);
+}
+
+.card-holder:hover .card{
+    transform: rotateY(-179deg);
+}
+
+.card-front,.card-back{
+    perspective: 150rem;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+
+.card-front img,.card-back img{
+    width: 100%;
+    background-size: cover;
+}
+
+.card-back{
+    transform: rotateY(180deg);
+}
+
+.info, .wishes{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    align-items: center;
+    justify-content: center;
+}
+
+.wishes{
+    padding: 7rem 2rem;
+    justify-content: space-between;
+    font-family: 'Sacramento', cursive;
+}
+
+.wishes *{
+    font-size: 24px;
+    transition: all .25s ease;
+}
+
+
+.wishes *:hover{
+    text-shadow: 0 0 10px #dc3c4d;
+}
+
+.wishes p:hover span.dark{
+    text-shadow: 0 0 10px #000;
+}
+
+.info h4{
+    font-size: 22.5px;
+    transform: translateY(20px);
+    font-weight: 500;
+}
+
+.info h1 {
+    font-size: 80px;
+    font-weight: 800;
+}
